@@ -278,6 +278,348 @@ export default function Home() {
           </div>
         </section>
 
+        {/* AI Workshop Section - Moved right after hero section */}
+        <section className="py-28 overflow-hidden relative">
+          <div className="absolute inset-0 bg-gradient-to-br from-orange-500/5 to-orange-600/10 pointer-events-none"></div>
+          <div className="container mx-auto px-6 lg:px-8 relative z-10">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl lg:text-5xl font-bold mb-6 text-white">
+                AI{" "}
+                <span className="bg-gradient-to-r from-orange-500 to-orange-600 text-transparent bg-clip-text">
+                  Workshop
+                </span>
+              </h2>
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                Transform your creative process with our powerful AI-driven
+                solutions
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+              {/* AI Video Production */}
+              <div className="bg-gradient-to-br from-black/40 to-black/20 backdrop-blur-md border border-white/5 rounded-2xl overflow-hidden group hover:border-orange-500/20 transition-all duration-500 shadow-lg hover:shadow-orange-500/10">
+                <div className="h-48 overflow-hidden">
+                  <img
+                    src="https://images.unsplash.com/photo-1536240478700-b869070f9279?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2562&q=80"
+                    alt="AI Video Production"
+                    className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
+                  />
+                </div>
+                <div className="p-8">
+                  <div className="mb-4 w-12 h-12 rounded-xl bg-gradient-to-br from-orange-500 to-orange-600 flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="h-6 w-6 text-white"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={1.5}
+                        d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"
+                      />
+                    </svg>
+                  </div>
+                  <h3 className="text-xl font-bold mb-3 text-white group-hover:text-orange-400 transition-colors">
+                    AI Video Production
+                  </h3>
+                  <p className="text-gray-400 mb-6 group-hover:text-gray-300 transition-colors">
+                    Transform your ideas into stunning videos with our advanced
+                    AI — just describe what you want and our AI does the rest.
+                  </p>
+                  <button className="text-sm text-white flex items-center gap-2 group-hover:text-orange-400 transition-colors">
+                    <span>Learn more</span>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="h-4 w-4 transform group-hover:translate-x-1 transition-transform"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M14 5l7 7m0 0l-7 7m7-7H3"
+                      />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+
+              {/* Creative Advertisements */}
+              <div className="bg-gradient-to-br from-black/40 to-black/20 backdrop-blur-md border border-white/5 rounded-2xl overflow-hidden group hover:border-orange-500/20 transition-all duration-500 shadow-lg hover:shadow-orange-500/10">
+                <div className="h-48 overflow-hidden">
+                  <img
+                    src="https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                    alt="Creative Advertisements"
+                    className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
+                  />
+                </div>
+                <div className="p-8">
+                  <div className="mb-4 w-12 h-12 rounded-xl bg-gradient-to-br from-orange-500 to-orange-600 flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="h-6 w-6 text-white"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={1.5}
+                        d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z"
+                      />
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={1.5}
+                        d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z"
+                      />
+                    </svg>
+                  </div>
+                  <h3 className="text-xl font-bold mb-3 text-white group-hover:text-orange-400 transition-colors">
+                    Creative Advertisements
+                  </h3>
+                  <p className="text-gray-300 mb-6 group-hover:text-gray-300 transition-colors">
+                    Create AI-driven videos and witty real-life short ads
+                    &mdash; fast, smart, and built for today&apos;s audiences.
+                  </p>
+                  <button className="text-sm text-white flex items-center gap-2 group-hover:text-orange-400 transition-colors">
+                    <span>Learn more</span>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="h-4 w-4 transform group-hover:translate-x-1 transition-transform"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M14 5l7 7m0 0l-7 7m7-7H3"
+                      />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+
+              {/* AI Workshop */}
+              <div className="bg-gradient-to-br from-black/40 to-black/20 backdrop-blur-md border border-white/5 rounded-2xl overflow-hidden group hover:border-orange-500/20 transition-all duration-500 shadow-lg hover:shadow-orange-500/10">
+                <div className="h-48 overflow-hidden">
+                  <Image
+                    src="https://images.unsplash.com/photo-1485846234645-a62644f84728?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1459&q=80"
+                    alt="AI Workshop"
+                    className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
+                    width={1459}
+                    height={800}
+                    priority={false}
+                    loading="lazy"
+                  />
+                </div>
+                <div className="p-8">
+                  <div className="mb-4 w-12 h-12 rounded-xl bg-gradient-to-br from-orange-500 to-orange-600 flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="h-6 w-6 text-white"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={1.5}
+                        d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"
+                      />
+                    </svg>
+                  </div>
+                  <h3 className="text-xl font-bold mb-3 text-white group-hover:text-orange-400 transition-colors">
+                    AI Workshop
+                  </h3>
+                  <p className="text-gray-400 mb-6 group-hover:text-gray-300 transition-colors">
+                    Our AI Workshop combines cutting-edge artificial
+                    intelligence with an intuitive interface, allowing anyone to
+                    create professional videos without technical expertise.
+                  </p>
+                  <button className="text-sm text-white flex items-center gap-2 group-hover:text-orange-400 transition-colors">
+                    <span>Learn more</span>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="h-4 w-4 transform group-hover:translate-x-1 transition-transform"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M14 5l7 7m0 0l-7 7m7-7H3"
+                      />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div className="flex justify-center mt-16">
+              <button className="btn-premium px-8 py-3 rounded-full text-white flex items-center gap-2">
+                <span>Explore all features</span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-5 w-5"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M14 5l7 7m0 0l-7 7m7-7H3"
+                  />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </section>
+
+        {/* Features Section - Removed background color */}
+        <section className="py-24 backdrop-blur-sm bg-black/10" id="features">
+          <div className="container mx-auto px-6 lg:px-8">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl lg:text-5xl font-bold mb-4 text-white">
+                Solve your team&apos;s
+                <br />
+                biggest challenges
+              </h2>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-6xl mx-auto">
+              {/* Feature Card 1 */}
+              <div
+                className="feature-card relative overflow-hidden rounded-2xl bg-gradient-to-br from-black/40 to-black/20 backdrop-blur-md border border-white/5 p-8 transform transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-orange-500/10 hover:border-orange-500/20 group animate-fade-in"
+                style={{ animationDelay: "0.2s" }}
+              >
+                {/* Decorative gradient orb */}
+                <div className="absolute -top-10 -right-10 w-40 h-40 bg-gradient-to-br from-orange-500/20 to-purple-500/5 rounded-full blur-2xl opacity-50 group-hover:opacity-80 transition-opacity"></div>
+
+                {/* Icon with animated gradient background */}
+                <div className="relative z-10 mb-6 w-16 h-16 rounded-2xl bg-gradient-to-br from-orange-500 to-orange-600 flex items-center justify-center shadow-lg overflow-hidden group-hover:scale-110 transition-transform duration-500 transform-gpu">
+                  <div className="absolute inset-0 bg-gradient-to-br from-orange-400 to-orange-600 opacity-70 animate-pulse"></div>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-8 w-8 text-white relative z-10"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={1.5}
+                      d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"
+                    />
+                  </svg>
+                </div>
+
+                <h3 className="text-xl font-bold mb-3 text-white relative z-10 group-hover:text-orange-400 transition-colors">
+                  Creative Flexibility
+                </h3>
+                <p className="text-gray-400 relative z-10 group-hover:text-gray-300 transition-colors">
+                  You can personalize videos for different audiences without
+                  redoing everything from scratch.
+                </p>
+
+                {/* Hover indicator */}
+                <div className="absolute bottom-0 left-0 h-1 bg-gradient-to-r from-orange-500 to-orange-600 w-0 group-hover:w-full transition-all duration-700"></div>
+              </div>
+
+              {/* Feature Card 2 */}
+              <div
+                className="feature-card relative overflow-hidden rounded-2xl bg-gradient-to-br from-black/40 to-black/20 backdrop-blur-md border border-white/5 p-8 transform transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-orange-500/10 hover:border-orange-500/20 group animate-fade-in"
+                style={{ animationDelay: "0.4s" }}
+              >
+                {/* Decorative gradient orb */}
+                <div className="absolute -top-10 -right-10 w-40 h-40 bg-gradient-to-br from-orange-500/20 to-purple-500/5 rounded-full blur-2xl opacity-50 group-hover:opacity-80 transition-opacity"></div>
+
+                {/* Icon with animated gradient background */}
+                <div className="relative z-10 mb-6 w-16 h-16 rounded-2xl bg-gradient-to-br from-orange-500 to-orange-600 flex items-center justify-center shadow-lg overflow-hidden group-hover:scale-110 transition-transform duration-500 transform-gpu">
+                  <div className="absolute inset-0 bg-gradient-to-br from-orange-400 to-orange-600 opacity-70 animate-pulse"></div>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-8 w-8 text-white relative z-10"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={1.5}
+                      d="M13 10V3L4 14h7v7l9-11h-7z"
+                    />
+                  </svg>
+                </div>
+
+                <h3 className="text-xl font-bold mb-3 text-white relative z-10 group-hover:text-orange-400 transition-colors">
+                  Speed and Scalability
+                </h3>
+                <p className="text-gray-400 relative z-10 group-hover:text-gray-300 transition-colors">
+                  Huge savings on actors, cameras, editors, and studios — with
+                  professional videos at a fraction of traditional budgets.
+                </p>
+
+                {/* Hover indicator */}
+                <div className="absolute bottom-0 left-0 h-1 bg-gradient-to-r from-orange-500 to-orange-600 w-0 group-hover:w-full transition-all duration-700"></div>
+              </div>
+
+              {/* Feature Card 3 */}
+              <div
+                className="feature-card relative overflow-hidden rounded-2xl bg-gradient-to-br from-black/40 to-black/20 backdrop-blur-md border border-white/5 p-8 transform transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-orange-500/10 hover:border-orange-500/20 group animate-fade-in"
+                style={{ animationDelay: "0.6s" }}
+              >
+                {/* Decorative gradient orb */}
+                <div className="absolute -top-10 -right-10 w-40 h-40 bg-gradient-to-br from-orange-500/20 to-purple-500/5 rounded-full blur-2xl opacity-50 group-hover:opacity-80 transition-opacity"></div>
+
+                {/* Icon with animated gradient background */}
+                <div className="relative z-10 mb-6 w-16 h-16 rounded-2xl bg-gradient-to-br from-orange-500 to-orange-600 flex items-center justify-center shadow-lg overflow-hidden group-hover:scale-110 transition-transform duration-500 transform-gpu">
+                  <div className="absolute inset-0 bg-gradient-to-br from-orange-400 to-orange-600 opacity-70 animate-pulse"></div>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-8 w-8 text-white relative z-10"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={1.5}
+                      d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                    />
+                  </svg>
+                </div>
+
+                <h3 className="text-xl font-bold mb-3 text-white relative z-10 group-hover:text-orange-400 transition-colors">
+                  Cost-Effectiveness
+                </h3>
+                <p className="text-gray-400 relative z-10 group-hover:text-gray-300 transition-colors">
+                  Choose from a wide range of realistic AI characters to
+                  represent your brand.
+                </p>
+
+                {/* Hover indicator */}
+                <div className="absolute bottom-0 left-0 h-1 bg-gradient-to-r from-orange-500 to-orange-600 w-0 group-hover:w-full transition-all duration-700"></div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Use Cases Section with Parallax Effects */}
         <section className="py-28 overflow-hidden relative">
           {/* Background elements */}
@@ -526,7 +868,7 @@ export default function Home() {
         </section>
 
         {/* Career Section */}
-        <section className="py-28 relative bg-gradient-to-br from-[#100a20] to-[#120417] overflow-hidden">
+        <section className="py-28 overflow-hidden relative">
           <div className="container mx-auto px-6 lg:px-8 relative z-10">
             <div className="max-w-5xl mx-auto">
               <div className="text-center mb-8">
@@ -809,181 +1151,6 @@ export default function Home() {
                     <div className="text-gray-400">Customer Satisfaction</div>
                   </div>
                 </div>
-              </div>
-            </div>
-
-            {/* Team member highlights */}
-            <div className="mt-20 max-w-6xl mx-auto">
-              {/* <h3 className="text-2xl font-bold mb-10 text-white text-center">
-                Meet Our Leadership
-              </h3> */}
-
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                {/* Team Member 1 */}
-                {/* <div className="bg-gradient-to-br from-black/40 to-black/20 backdrop-blur-md border border-white/5 rounded-2xl overflow-hidden group transform transition-all duration-500 hover:border-orange-500/20 hover:shadow-lg hover:shadow-orange-500/10">
-                  <div className="h-48 overflow-hidden">
-                    <div className="w-full h-full bg-gradient-to-br from-orange-500/30 to-purple-500/30"></div>
-                  </div>
-                  <div className="p-6 text-center">
-                    <h4 className="text-lg font-bold text-white mb-1">
-                      Sarah Chen
-                    </h4>
-                    <p className="text-gray-400 text-sm mb-3">
-                      CEO & Co-Founder
-                    </p>
-                    <div className="flex justify-center space-x-3">
-                      <a
-                        href="#"
-                        className="text-gray-400 hover:text-orange-500 transition-colors"
-                      >
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          className="h-5 w-5"
-                          fill="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z" />
-                        </svg>
-                      </a>
-                      <a
-                        href="#"
-                        className="text-gray-400 hover:text-orange-500 transition-colors"
-                      >
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          className="h-5 w-5"
-                          fill="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z" />
-                        </svg>
-                      </a>
-                    </div>
-                  </div>
-                </div> */}
-                {/* Team Member 2 */}
-                {/* <div className="bg-gradient-to-br from-black/40 to-black/20 backdrop-blur-md border border-white/5 rounded-2xl overflow-hidden group transform transition-all duration-500 hover:border-orange-500/20 hover:shadow-lg hover:shadow-orange-500/10">
-                  <div className="h-48 overflow-hidden">
-                    <div className="w-full h-full bg-gradient-to-br from-orange-500/30 to-purple-500/30"></div>
-                  </div>
-                  <div className="p-6 text-center">
-                    <h4 className="text-lg font-bold text-white mb-1">
-                      James Rodriguez
-                    </h4>
-                    <p className="text-gray-400 text-sm mb-3">CTO</p>
-                    <div className="flex justify-center space-x-3">
-                      <a
-                        href="#"
-                        className="text-gray-400 hover:text-orange-500 transition-colors"
-                      >
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          className="h-5 w-5"
-                          fill="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z" />
-                        </svg>
-          </a>
-          <a
-                        href="#"
-                        className="text-gray-400 hover:text-orange-500 transition-colors"
-                      >
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          className="h-5 w-5"
-                          fill="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z" />
-          </a>
-        </div>
-                  </div>
-                </div> */}
-                {/* Team Member 3 */}
-                {/* <div className="bg-gradient-to-br from-black/40 to-black/20 backdrop-blur-md border border-white/5 rounded-2xl overflow-hidden group transform transition-all duration-500 hover:border-orange-500/20 hover:shadow-lg hover:shadow-orange-500/10">
-                  <div className="h-48 overflow-hidden">
-                    <div className="w-full h-full bg-gradient-to-br from-orange-500/30 to-purple-500/30"></div>
-                  </div>
-                  <div className="p-6 text-center">
-                    <h4 className="text-lg font-bold text-white mb-1">
-                      Emily Williams
-                    </h4>
-                    <p className="text-gray-400 text-sm mb-3">
-                      Creative Director
-                    </p>
-                    <div className="flex justify-center space-x-3">
-                      <a
-                        href="#"
-                        className="text-gray-400 hover:text-orange-500 transition-colors"
-                      >
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          className="h-5 w-5"
-                          fill="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z" />
-                        </svg>
-        </a>
-        <a
-                        href="#"
-                        className="text-gray-400 hover:text-orange-500 transition-colors"
-                      >
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          className="h-5 w-5"
-                          fill="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z" />
-                        </svg>
-                      </a>
-                    </div>
-                  </div>
-                </div> */}
-                {/* Team Member 4
-                <div className="bg-gradient-to-br from-black/40 to-black/20 backdrop-blur-md border border-white/5 rounded-2xl overflow-hidden group transform transition-all duration-500 hover:border-orange-500/20 hover:shadow-lg hover:shadow-orange-500/10">
-                  <div className="h-48 overflow-hidden">
-                    <div className="w-full h-full bg-gradient-to-br from-orange-500/30 to-purple-500/30"></div>
-                  </div>
-                  <div className="p-6 text-center">
-                    <h4 className="text-lg font-bold text-white mb-1">
-                      David Lee
-                    </h4>
-                    <p className="text-gray-400 text-sm mb-3">
-                      AI Research Lead
-                    </p>
-                    <div className="flex justify-center space-x-3">
-                      <a
-                        href="#"
-                        className="text-gray-400 hover:text-orange-500 transition-colors"
-                      >
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          className="h-5 w-5"
-                          fill="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z" />
-                        </svg>
-        </a>
-        <a
-                        href="#"
-                        className="text-gray-400 hover:text-orange-500 transition-colors"
-                      >
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          className="h-5 w-5"
-                          fill="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z" />
-                        </svg>
-                      </a>
-                    </div>
-                  </div>
-                </div> */}
               </div>
             </div>
           </div>
