@@ -39,9 +39,14 @@ export default function Home() {
         {/* Header/Navigation */}
         <header className="container mx-auto flex justify-between items-center py-6 px-6 lg:px-8 relative">
           <div className="flex items-center">
-            <h1 className="text-2xl font-bold bg-gradient-to-r from-[#00a8ff] to-[#9c27b0] text-transparent bg-clip-text">
-              StellarFrame
-            </h1>
+            <Image
+              src="/Stellarframes.svg"
+              alt="StellarFrame"
+              width={150}
+              height={40}
+              className="h-auto"
+              priority
+            />
           </div>
           <nav className="hidden md:flex space-x-10">
             <a href="#" className="text-gray-300 hover:text-white font-medium">
