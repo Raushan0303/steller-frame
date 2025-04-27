@@ -36,7 +36,7 @@ export default function TestimonialCarousel() {
     },
     {
       quote:
-        "I've tried many AI tools, but StellarFrame offers the best combination of quality and ease of use.",
+        "I&apos;ve tried many AI tools, but StellarFrame offers the best combination of quality and ease of use.",
       name: "David K.",
       title: "Freelance Creator",
     },
@@ -91,9 +91,9 @@ export default function TestimonialCarousel() {
             className="bg-[#1e1e1e] p-8 rounded-2xl shadow-lg border border-[#2a2a2a] flex-shrink-0 w-[350px] hover:shadow-xl hover:border-[#3a3a3a] transition-all duration-300"
           >
             <div className="bg-gradient-to-r from-[#00a8ff]/10 to-[#9c27b0]/10 h-[3px] w-16 mb-6"></div>
-            <p className="text-gray-300 mb-6 text-lg leading-relaxed">
-              "{testimonial.quote}"
-            </p>
+            <div className="text-white text-lg md:text-xl mb-6 font-light">
+              &ldquo;{testimonial.quote}&rdquo;
+            </div>
             <div className="flex items-center">
               <div className="w-12 h-12 bg-gradient-to-r from-[#00a8ff]/30 to-[#9c27b0]/30 rounded-full mr-4 flex items-center justify-center text-white">
                 {testimonial.name.charAt(0)}
@@ -115,9 +115,9 @@ export default function TestimonialCarousel() {
             className="bg-[#1e1e1e] p-8 rounded-2xl shadow-lg border border-[#2a2a2a] flex-shrink-0 w-[350px] hover:shadow-xl hover:border-[#3a3a3a] transition-all duration-300"
           >
             <div className="bg-gradient-to-r from-[#00a8ff]/10 to-[#9c27b0]/10 h-[3px] w-16 mb-6"></div>
-            <p className="text-gray-300 mb-6 text-lg leading-relaxed">
-              "{testimonial.quote}"
-            </p>
+            <div className="text-white text-lg md:text-xl mb-6 font-light">
+              &ldquo;{testimonial.quote}&rdquo;
+            </div>
             <div className="flex items-center">
               <div className="w-12 h-12 bg-gradient-to-r from-[#00a8ff]/30 to-[#9c27b0]/30 rounded-full mr-4 flex items-center justify-center text-white">
                 {testimonial.name.charAt(0)}

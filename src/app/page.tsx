@@ -1,15 +1,11 @@
 "use client";
 
-import Image from "next/image";
-import VideoPlayer from "./components/VideoPlayer";
-import TestimonialCarousel from "./components/TestimonialCarousel";
-import { ArrowRight, CheckCircle2, Star } from "lucide-react";
+import { ArrowRight, CheckCircle2 } from "lucide-react";
 import FloatingIcons from "./components/FloatingIcons";
 import BackgroundGradient from "./components/BackgroundGradient";
 import AnimatedText from "./components/AnimatedText";
 import CodeReveal from "./components/CodeReveal";
 import HeroBackground from "./components/HeroBackground";
-import { useEffect, useState } from "react";
 import FAQ from "./components/FAQ";
 
 export default function Home() {
@@ -374,9 +370,9 @@ export default function Home() {
                   <h3 className="text-xl font-bold mb-3 text-white group-hover:text-orange-400 transition-colors">
                     Creative Advertisements
                   </h3>
-                  <p className="text-gray-400 mb-6 group-hover:text-gray-300 transition-colors">
-                    Create AI-driven videos and witty real-life short ads —
-                    fast, smart, and built for today's audiences.
+                  <p className="text-gray-300 mb-6 group-hover:text-gray-300 transition-colors">
+                    Create AI-driven videos and witty real-life short ads
+                    &mdash; fast, smart, and built for today&apos;s audiences.
                   </p>
                   <button className="text-sm text-white flex items-center gap-2 group-hover:text-orange-400 transition-colors">
                     <span>Learn more</span>
@@ -428,8 +424,9 @@ export default function Home() {
                     AI Workshop
                   </h3>
                   <p className="text-gray-400 mb-6 group-hover:text-gray-300 transition-colors">
-                    Our powerful AI Workshop allows you to fine-tune and
-                    customize every aspect of your videos with intuitive tools.
+                    Our AI Workshop combines cutting-edge artificial
+                    intelligence with an intuitive interface, allowing anyone to
+                    create professional videos without technical expertise.
                   </p>
                   <button className="text-sm text-white flex items-center gap-2 group-hover:text-orange-400 transition-colors">
                     <span>Learn more</span>
@@ -479,7 +476,7 @@ export default function Home() {
           <div className="container mx-auto px-6 lg:px-8">
             <div className="text-center mb-16">
               <h2 className="text-4xl lg:text-5xl font-bold mb-4 text-white">
-                Solve your team's
+                Solve your team&apos;s
                 <br />
                 biggest challenges
               </h2>
@@ -670,8 +667,8 @@ export default function Home() {
                   </h3>
 
                   <p className="text-gray-300 mb-6 transform transition-all duration-700 delay-100 opacity-0 translate-y-8 group-hover:opacity-100 group-hover:translate-y-0">
-                    Bring your music to life with stunning AI-generated videos —
-                    fast, affordable, and endlessly creative visuals.
+                    Bring your music to life with stunning AI-generated videos
+                    &mdash; fast, affordable, and endlessly creative visuals.
                   </p>
 
                   <div className="transform transition-all duration-700 delay-200 opacity-0 translate-y-8 group-hover:opacity-100 group-hover:translate-y-0">
@@ -742,8 +739,8 @@ export default function Home() {
 
                   <p className="text-gray-300 mb-6 transform transition-all duration-700 delay-100 opacity-0 translate-y-8 group-hover:opacity-100 group-hover:translate-y-0">
                     Supercharge your production pipeline with AI-generated
-                    videos — faster turnarounds, lower costs, and limitless
-                    creativity. Start now!
+                    videos &mdash; faster turnarounds, lower costs, and
+                    limitless creativity. Start now!
                   </p>
 
                   <div className="transform transition-all duration-700 delay-200 opacity-0 translate-y-8 group-hover:opacity-100 group-hover:translate-y-0">
@@ -813,8 +810,8 @@ export default function Home() {
                   </h3>
 
                   <p className="text-gray-300 mb-6 transform transition-all duration-700 delay-100 opacity-0 translate-y-8 group-hover:opacity-100 group-hover:translate-y-0">
-                    Create AI-driven videos and witty real-life short ads —
-                    fast, smart, and built for today's audiences.
+                    Create AI-driven videos and witty real-life short ads
+                    &mdash; fast, smart, and built for today&apos;s audiences.
                   </p>
 
                   <div className="transform transition-all duration-700 delay-200 opacity-0 translate-y-8 group-hover:opacity-100 group-hover:translate-y-0">
@@ -881,7 +878,7 @@ export default function Home() {
                   <p className="text-gray-300 mb-4">
                     Founded by a team of AI experts and filmmakers, StellarFrame
                     was born from the vision to democratize professional video
-                    creation. We're on a mission to empower creators of all
+                    creation. We&apos;re on a mission to empower creators of all
                     skill levels to produce stunning videos in minutes instead
                     of days.
                   </p>
@@ -948,9 +945,9 @@ export default function Home() {
                               />
                             </svg>
                             <p className="text-xl text-gray-200 italic">
-                              "StellarFrame has revolutionized how we create
-                              product demos and training materials for our
-                              global team."
+                              &ldquo;StellarFrame has revolutionized how we
+                              create product demos and training materials for
+                              our global team.&rdquo;
                             </p>
                           </div>
 

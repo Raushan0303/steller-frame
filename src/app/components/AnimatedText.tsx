@@ -1,139 +1,72 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { motion } from "framer-motion";
 
 interface AnimatedTextProps {
   text: string;
-  type?: "gradient" | "wave" | "highlight";
+  type: "gradient" | "highlight" | "wave";
   className?: string;
   delay?: number;
 }
 
-export default function AnimatedText({
+const AnimatedText: React.FC<AnimatedTextProps> = ({
   text,
   type = "gradient",
   className = "",
   delay = 0,
-}: AnimatedTextProps) {
+}) => {
   // Split text into words for individual animation
   const words = text.split(" ");
 
-  const container = {
-    hidden: { opacity: 0 },
-    visible: (i = 1) => ({
-      opacity: 1,
-      transition: { staggerChildren: 0.12, delayChildren: delay * i },
-    }),
-  };
-
-  const child = {
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        type: "spring",
-        damping: 12,
-        stiffness: 100,
-      },
-    },
-    hidden: {
-      opacity: 0,
-      y: 20,
-      transition: {
-        type: "spring",
-        damping: 12,
-        stiffness: 100,
-      },
-    },
-  };
-
-  // Wave animation for text
-  const waveAnimation = {
-    hidden: {
-      y: 0,
-      opacity: 0,
-    },
+  // Animation variants for words
+  const wordVariants = {
+    hidden: { opacity: 0, y: 20 },
     visible: (i: number) => ({
-      y: [0, -15, 0],
       opacity: 1,
+      y: 0,
       transition: {
-        delay: i * 0.05,
-        y: {
-          repeat: 0,
-          duration: 0.6,
-          ease: "easeInOut",
-        },
+        delay: delay + i * 0.1,
+        duration: 0.5,
       },
     }),
   };
 
-  // Highlight animation for text
-  const highlightAnimation = {
-    hidden: {
-      backgroundSize: "0% 100%",
-      opacity: 0,
-    },
-    visible: {
-      backgroundSize: "100% 100%",
-      opacity: 1,
-      transition: {
-        duration: 0.8,
-        ease: "easeInOut",
-        delay: delay,
-      },
-    },
-  };
-
-  // Render different animation types
-  if (type === "wave") {
-    return (
-      <motion.span
-        className={`inline-block ${className}`}
-        initial="hidden"
-        animate="visible"
-        variants={container}
-      >
-        {Array.from(text).map((letter, i) => (
-          <motion.span
-            key={i}
-            custom={i}
-            variants={waveAnimation}
-            className="inline-block mx-[1px]"
-          >
-            {letter === " " ? "\u00A0" : letter}
-          </motion.span>
-        ))}
-      </motion.span>
-    );
-  }
-
-  if (type === "highlight") {
-    return (
-      <motion.span
-        className={`inline-block bg-gradient-to-r from-[#00a8ff] to-[#9c27b0] bg-no-repeat text-transparent bg-clip-text bg-left-bottom ${className}`}
-        initial="hidden"
-        animate="visible"
-        variants={highlightAnimation}
-      >
-        {text}
-      </motion.span>
-    );
-  }
-
-  // Default gradient animation
   return (
-    <motion.span
-      className={`inline-block ${className}`}
-      variants={container}
-      initial="hidden"
-      animate="visible"
-    >
+    <span className={`inline-block ${className}`}>
       {words.map((word, i) => (
-        <motion.span key={i} variants={child} className="inline-block mr-2">
+        <motion.span
+          key={`${word}-${i}`}
+          className={`inline-block mr-2 
+            ${
+              type === "gradient"
+                ? "bg-clip-text text-transparent bg-gradient-to-r from-orange-500 to-orange-600"
+                : type === "highlight"
+                ? "relative px-1 py-1"
+                : ""
+            }`}
+          variants={wordVariants}
+          initial="hidden"
+          animate="visible"
+          custom={i}
+        >
+          {type === "highlight" && (
+            <motion.span
+              className="absolute inset-0 bg-orange-500/30 rounded-md -z-10"
+              initial={{ width: 0 }}
+              animate={{ width: "100%" }}
+              transition={{
+                delay: delay + 0.1 * i,
+                duration: 0.3,
+                ease: "easeInOut",
+              }}
+            ></motion.span>
+          )}
           {word}
         </motion.span>
       ))}
-    </motion.span>
+    </span>
   );
-}
+};
+
+export default AnimatedText;

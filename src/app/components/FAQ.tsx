@@ -87,14 +87,14 @@ const FAQ: React.FC = () => {
         "Most videos under 2 minutes are generated within 5-15 minutes, depending on complexity and current system load. Longer or more complex projects may take up to 30 minutes. Premium subscribers enjoy priority processing that can reduce wait times by up to 50%.",
     },
     {
-      question: "What if I'm not satisfied with the result?",
+      question: "What if I&apos;m not satisfied with the result?",
       answer:
-        "We offer unlimited revisions on all plans. If you're not happy with a generated video, you can provide more specific feedback and regenerate it. Our AI learns from your preferences over time, delivering increasingly accurate results that match your vision.",
+        "We offer unlimited revisions on all plans. If you&apos;re not happy with a generated video, you can provide more specific feedback and regenerate it. Our AI learns from your preferences over time, delivering increasingly accurate results that match your vision.",
     },
     {
-      question: "Do I own the rights to videos I create?",
+      question: "Who owns the videos I create?",
       answer:
-        "Yes, you retain 100% ownership of all videos created on our platform. You're free to use them commercially, share them, or modify them however you wish. We make no copyright claims on your generated content.",
+        "Yes, you retain 100% ownership of all videos created on our platform. You&apos;re free to use them commercially, share them, or modify them however you wish. We make no copyright claims on your generated content.",
     },
   ];
 

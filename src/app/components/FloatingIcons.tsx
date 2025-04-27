@@ -1,20 +1,10 @@
 "use client";
 
-import React, { useRef, useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 
-interface FloatingIcon {
-  icon: string;
-  size: number;
-  x: number;
-  y: number;
-  duration: number;
-  delay: number;
-  rotate: number;
-}
-
 interface FloatingIconsProps {
-  variant?: "hero" | "cta";
+  variant?: "default" | "cta" | "hero";
   className?: string;
 }
 
@@ -79,8 +69,13 @@ const CtaIcons = () => {
   );
 };
 
+const DefaultIcons = () => {
+  // Implementation of DefaultIcons
+  return null; // Placeholder return, actual implementation needed
+};
+
 export default function FloatingIcons({
-  variant = "hero",
+  variant = "default",
   className = "",
 }: FloatingIconsProps) {
   const [isClient, setIsClient] = useState(false);
@@ -89,13 +84,21 @@ export default function FloatingIcons({
     setIsClient(true);
   }, []);
 
-  if (!isClient) return null;
+  if (!isClient) {
+    return null;
+  }
 
   return (
     <div
       className={`absolute inset-0 overflow-hidden pointer-events-none z-0 ${className}`}
     >
-      {variant === "hero" ? <HeroIcons /> : <CtaIcons />}
+      {variant === "hero" ? (
+        <HeroIcons />
+      ) : variant === "cta" ? (
+        <CtaIcons />
+      ) : (
+        <DefaultIcons />
+      )}
     </div>
   );
 }
