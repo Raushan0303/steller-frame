@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 import FloatingIcons from "./components/FloatingIcons";
 import BackgroundGradient from "./components/BackgroundGradient";
@@ -7,6 +8,12 @@ import AnimatedText from "./components/AnimatedText";
 import CodeReveal from "./components/CodeReveal";
 import HeroBackground from "./components/HeroBackground";
 import FAQ from "./components/FAQ";
+
+// Optimization: Lazy load components that aren't immediately visible
+import dynamic from "next/dynamic";
+
+// Lazy load components below the fold
+const LazyFAQ = dynamic(() => import("./components/FAQ"), { ssr: false });
 
 export default function Home() {
   return (
@@ -65,7 +72,8 @@ export default function Home() {
           {/* Main Hero Content */}
           <div className="max-w-7xl mx-auto relative">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-              <div className="order-2 lg:order-1">
+              {/* Text content - No more order classes to keep it on top for mobile */}
+              <div>
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-tight mb-6">
                   <AnimatedText
                     text="Create professional"
@@ -105,15 +113,15 @@ export default function Home() {
                 </div>
               </div>
 
-              {/* Video Grid - Right Side */}
+              {/* Video Grid - No more order classes */}
               <div
-                className="relative order-1 lg:order-2 z-10 animate-fade-in"
+                className="relative z-10 animate-fade-in"
                 style={{ animationDelay: "0.8s" }}
               >
-                <div className="grid grid-cols-3 gap-2">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-2 px-4 md:px-0">
                   {/* First row: 16:9 video (spans 2 columns) and 9:16 video */}
                   <div
-                    className="col-span-2 relative rounded-2xl overflow-hidden shadow-lg group 
+                    className="col-span-1 md:col-span-2 relative rounded-2xl overflow-hidden shadow-lg group 
                     transition-all duration-500 hover:shadow-2xl hover:shadow-orange-500/20
                     hover:scale-[1.02] transform-gpu will-change-transform
                     bg-black/20 backdrop-blur-sm animate-float-card-1"
@@ -121,8 +129,9 @@ export default function Home() {
                     <iframe
                       src="https://drive.google.com/file/d/1RUjd9pQHRuhQcBzGGKQdLCOpvHUshtXL/preview"
                       allow="autoplay; fullscreen"
-                      className="w-full h-80 md:h-72 transition-transform duration-700 group-hover:scale-[1.03]"
+                      className="w-full h-40 sm:h-56 md:h-72 transition-transform duration-700 group-hover:scale-[1.03]"
                       style={{ border: "none" }}
+                      loading="lazy"
                     ></iframe>
                     <div className="absolute top-3 left-3 text-white text-sm font-medium bg-black/40 backdrop-blur-sm py-1 px-3 rounded-full opacity-70 group-hover:opacity-100 transition-opacity duration-300">
                       Main Promo
@@ -151,7 +160,7 @@ export default function Home() {
                   </div>
 
                   <div
-                    className="relative rounded-2xl overflow-hidden shadow-lg group 
+                    className="hidden md:block relative rounded-2xl overflow-hidden shadow-lg group 
                     transition-all duration-500 hover:shadow-2xl hover:shadow-orange-500/20 
                     hover:scale-[1.02] transform-gpu will-change-transform
                     bg-black/20 backdrop-blur-sm animate-float-card-2"
@@ -160,7 +169,7 @@ export default function Home() {
                     <img
                       src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80"
                       alt="Vertical video thumbnail"
-                      className="w-full h-80 md:h-72 object-cover transition-transform duration-700 group-hover:scale-[1.05]"
+                      className="w-full h-72 object-cover transition-transform duration-700 group-hover:scale-[1.05]"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-50 group-hover:opacity-80 transition-opacity duration-300"></div>
                     <div className="absolute top-3 left-3 text-white text-sm font-medium bg-black/40 backdrop-blur-sm py-1 px-3 rounded-full opacity-70 group-hover:opacity-100 transition-opacity duration-300">
@@ -188,7 +197,7 @@ export default function Home() {
 
                   {/* Second row: 9:16 video and 16:9 video (spans 2 columns) */}
                   <div
-                    className="relative rounded-2xl overflow-hidden shadow-lg group 
+                    className="hidden md:block relative rounded-2xl overflow-hidden shadow-lg group 
                     transition-all duration-500 hover:shadow-2xl hover:shadow-orange-500/20 
                     hover:scale-[1.02] transform-gpu will-change-transform
                     bg-black/20 backdrop-blur-sm animate-float-card-2"
@@ -197,7 +206,7 @@ export default function Home() {
                     <img
                       src="https://images.unsplash.com/photo-1600096194735-ec70b8463112?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1964&q=80"
                       alt="Story video thumbnail"
-                      className="w-full h-80 md:h-72 object-cover transition-transform duration-700 group-hover:scale-[1.05]"
+                      className="w-full h-72 object-cover transition-transform duration-700 group-hover:scale-[1.05]"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-50 group-hover:opacity-80 transition-opacity duration-300"></div>
                     <div className="absolute top-3 left-3 text-white text-sm font-medium bg-black/40 backdrop-blur-sm py-1 px-3 rounded-full opacity-70 group-hover:opacity-100 transition-opacity duration-300">
@@ -224,16 +233,16 @@ export default function Home() {
                   </div>
 
                   <div
-                    className="col-span-2 relative rounded-2xl overflow-hidden shadow-lg group 
+                    className="col-span-1 md:col-span-2 relative rounded-2xl overflow-hidden shadow-lg group 
                     transition-all duration-500 hover:shadow-2xl hover:shadow-orange-500/20 
                     hover:scale-[1.02] transform-gpu will-change-transform
-                    bg-black/20 backdrop-blur-sm animate-float-card-3"
+                    bg-black/20 backdrop-blur-sm animate-float-card-3 mt-2 md:mt-0"
                     style={{ animationDelay: "0.6s" }}
                   >
                     <img
                       src="https://images.unsplash.com/photo-1536240478700-b869070f9279?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2562&q=80"
                       alt="Cinematic video thumbnail"
-                      className="w-full h-80 md:h-72 object-cover transition-transform duration-700 group-hover:scale-[1.05]"
+                      className="w-full h-40 sm:h-56 md:h-72 object-cover transition-transform duration-700 group-hover:scale-[1.05]"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-50 group-hover:opacity-80 transition-opacity duration-300"></div>
                     <div className="absolute top-3 left-3 text-white text-sm font-medium bg-black/40 backdrop-blur-sm py-1 px-3 rounded-full opacity-70 group-hover:opacity-100 transition-opacity duration-300">
@@ -397,10 +406,14 @@ export default function Home() {
               {/* AI Workshop */}
               <div className="bg-gradient-to-br from-black/40 to-black/20 backdrop-blur-md border border-white/5 rounded-2xl overflow-hidden group hover:border-orange-500/20 transition-all duration-500 shadow-lg hover:shadow-orange-500/10">
                 <div className="h-48 overflow-hidden">
-                  <img
+                  <Image
                     src="https://images.unsplash.com/photo-1485846234645-a62644f84728?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1459&q=80"
                     alt="AI Workshop"
                     className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
+                    width={1459}
+                    height={800}
+                    priority={false}
+                    loading="lazy"
                   />
                 </div>
                 <div className="p-8">
@@ -1079,7 +1092,6 @@ export default function Home() {
                           viewBox="0 0 24 24"
                         >
                           <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z" />
-                        </svg>
           </a>
         </div>
                   </div>
@@ -1193,7 +1205,7 @@ export default function Home() {
             </div>
 
             <div className="max-w-4xl mx-auto bg-gradient-to-br from-black/40 to-black/20 backdrop-blur-md border border-white/5 rounded-2xl p-6 md:p-10">
-              <FAQ />
+              <LazyFAQ />
             </div>
           </div>
         </section>

@@ -1,1 +1,11 @@
- 
+/* This is a binary file, so I'll just create a placeholder text explaining what it should be. 
+   In a real situation, you would need to upload a noise texture image file. */
+
+/* 
+This should be a noise.png image file with a subtle noise pattern.
+For a proper implementation, you would need to:
+1. Generate or find a suitable noise texture (perlin noise or grain texture)
+2. Save it as noise.png 
+3. Place it in the public folder
+4. The texture should be subtle and will be used with mix-blend-overlay at low opacity
+*/ 

@@ -1,0 +1,76 @@
+/* Mobile card size reduction styles */
+
+@media (max-width: 768px) {
+  /* AI Workshop Section cards */
+  .container .grid-cols-1.md\:grid-cols-3 .bg-gradient-to-br.from-black\/40.to-black\/20 {
+    transform: scale(0.85);
+    margin-bottom: -1.5rem; /* Compensate for the reduced size */
+  }
+  
+  /* Feature cards */
+  .feature-card {
+    transform: scale(0.85);
+    margin-bottom: -1.5rem; /* Compensate for the reduced size */
+  }
+
+  /* Use case section cards (Musicians, Production Houses, Brands) */
+  .grid-cols-1.lg\:grid-cols-3 .relative.rounded-2xl.group {
+    max-height: 350px; /* Reduce height */
+  }
+  
+  /* About us section cards */
+  .space-y-8 .bg-gradient-to-br.from-black\/40.to-black\/20 {
+    padding: 1rem; /* Reduce padding */
+    transform: scale(0.85);
+    margin-bottom: -1rem; /* Compensate for the reduced size */
+  }
+  
+  /* Testimonial card */
+  .bg-gradient-to-br.from-black\/70.to-black\/40 {
+    transform: scale(0.85);
+    margin-bottom: -1.5rem; /* Compensate for the reduced size */
+  }
+  
+  /* Stats cards */
+  .grid.grid-cols-2.gap-4.mt-4 > div {
+    padding: 0.75rem; /* Reduce padding */
+    transform: scale(0.85);
+  }
+  
+  /* Reduce vertical spacing between sections */
+  section.py-28, section.py-24 {
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+  }
+  
+  /* Reduce gap between grid items */
+  .gap-8 {
+    gap: 0.75rem;
+  }
+  
+  /* Make card images smaller on mobile */
+  .h-48 {
+    height: 8rem;
+  }
+  
+  /* Reduce card padding */
+  .p-8 {
+    padding: 1.25rem;
+  }
+  
+  /* Smaller font sizes for headings */
+  h2.text-4xl, h2.text-5xl {
+    font-size: 1.75rem;
+    line-height: 2.25rem;
+  }
+  
+  h3.text-2xl {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
+  
+  /* Add space at the bottom of sections to prevent cramming */
+  section {
+    margin-bottom: 1rem;
+  }
+} 
