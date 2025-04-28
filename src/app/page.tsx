@@ -8,6 +8,8 @@ import AnimatedText from "./components/AnimatedText";
 import CodeReveal from "./components/CodeReveal";
 import HeroBackground from "./components/HeroBackground";
 import FAQ from "./components/FAQ";
+import { useState } from "react";
+import Link from "next/link";
 
 // Optimization: Lazy load components that aren't immediately visible
 import dynamic from "next/dynamic";
@@ -16,6 +18,9 @@ import dynamic from "next/dynamic";
 const LazyFAQ = dynamic(() => import("./components/FAQ"), { ssr: false });
 
 export default function Home() {
+  const [isMainVideoPlaying, setIsMainVideoPlaying] = useState(false);
+  const [isCinematicVideoPlaying, setIsCinematicVideoPlaying] = useState(false);
+
   return (
     <div className="min-h-screen font-sans text-white overflow-hidden relative">
       {/* Initial Code Animation */}
@@ -111,10 +116,10 @@ export default function Home() {
                     <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-300 transform group-hover:translate-x-1" />
                   </button>
 
-                  <div className="flex items-center space-x-2 text-gray-400 text-sm">
+                  {/* <div className="flex items-center space-x-2 text-gray-400 text-sm">
                     <CheckCircle2 className="h-4 w-4 text-green-500" />
                     <span>No credit card required</span>
-                  </div>
+                  </div> */}
                 </div>
               </div>
 
@@ -132,7 +137,11 @@ export default function Home() {
                     bg-black/20 backdrop-blur-sm animate-float-card-1"
                   >
                     <iframe
-                      src="https://drive.google.com/file/d/1RUjd9pQHRuhQcBzGGKQdLCOpvHUshtXL/preview"
+                      src={
+                        isMainVideoPlaying
+                          ? "https://drive.google.com/file/d/1RUjd9pQHRuhQcBzGGKQdLCOpvHUshtXL/preview?autoplay=1"
+                          : "https://drive.google.com/file/d/1RUjd9pQHRuhQcBzGGKQdLCOpvHUshtXL/preview"
+                      }
                       allow="autoplay; fullscreen"
                       className="w-full h-40 sm:h-56 md:h-72 transition-transform duration-700 group-hover:scale-[1.03]"
                       style={{ border: "none" }}
@@ -144,24 +153,29 @@ export default function Home() {
                     <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 
                     {/* Play button that appears on hover */}
-                    <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500 transform group-hover:scale-100 scale-75">
-                      <div className="btn-video-control overflow-hidden">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          className="h-5 w-5 text-white"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          stroke="currentColor"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"
-                          />
-                        </svg>
+                    {!isMainVideoPlaying && (
+                      <div
+                        className="absolute inset-0 flex items-center justify-center cursor-pointer"
+                        onClick={() => setIsMainVideoPlaying(true)}
+                      >
+                        <div className="btn-video-control overflow-hidden">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            className="h-5 w-5 text-white"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2}
+                              d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"
+                            />
+                          </svg>
+                        </div>
                       </div>
-                    </div>
+                    )}
                   </div>
 
                   <div
@@ -244,33 +258,49 @@ export default function Home() {
                     bg-black/20 backdrop-blur-sm animate-float-card-3 mt-2 md:mt-0"
                     style={{ animationDelay: "0.6s" }}
                   >
-                    <img
-                      src="https://images.unsplash.com/photo-1536240478700-b869070f9279?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2562&q=80"
-                      alt="Cinematic video thumbnail"
-                      className="w-full h-40 sm:h-56 md:h-72 object-cover transition-transform duration-700 group-hover:scale-[1.05]"
-                    />
+                    <div className="w-full h-40 sm:h-56 md:h-72">
+                      <iframe
+                        width="100%"
+                        height="100%"
+                        src={`https://www.youtube.com/embed/7TMqzXaBvy8?si=ve4Sx475R6JDEGo9${
+                          isCinematicVideoPlaying ? "&autoplay=1" : ""
+                        }`}
+                        title="YouTube video player"
+                        frameBorder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerPolicy="strict-origin-when-cross-origin"
+                        allowFullScreen
+                      ></iframe>
+                    </div>
                     <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-50 group-hover:opacity-80 transition-opacity duration-300"></div>
                     <div className="absolute top-3 left-3 text-white text-sm font-medium bg-black/40 backdrop-blur-sm py-1 px-3 rounded-full opacity-70 group-hover:opacity-100 transition-opacity duration-300">
                       Cinematic
                     </div>
-                    <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500 transform group-hover:scale-100 scale-75">
-                      <div className="btn-video-control">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          className="h-5 w-5 text-white"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          stroke="currentColor"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"
-                          />
-                        </svg>
+
+                    {/* Play button */}
+                    {!isCinematicVideoPlaying && (
+                      <div
+                        className="absolute inset-0 flex items-center justify-center cursor-pointer"
+                        onClick={() => setIsCinematicVideoPlaying(true)}
+                      >
+                        <div className="btn-video-control">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            className="h-5 w-5 text-white"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2}
+                              d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"
+                            />
+                          </svg>
+                        </div>
                       </div>
-                    </div>
+                    )}
                   </div>
                 </div>
               </div>
@@ -412,7 +442,7 @@ export default function Home() {
               <div className="bg-gradient-to-br from-black/40 to-black/20 backdrop-blur-md border border-white/5 rounded-2xl overflow-hidden group hover:border-orange-500/20 transition-all duration-500 shadow-lg hover:shadow-orange-500/10">
                 <div className="h-48 overflow-hidden">
                   <Image
-                    src="https://images.unsplash.com/photo-1485846234645-a62644f84728?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1459&q=80"
+                    src="/gen_ai.png"
                     alt="AI Workshop"
                     className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
                     width={1459}
@@ -651,8 +681,7 @@ export default function Home() {
                   <div
                     className="absolute inset-0 scale-110 bg-cover bg-center transition-transform duration-1000 ease-out group-hover:scale-100"
                     style={{
-                      backgroundImage:
-                        "url('https://images.unsplash.com/photo-1511379938547-c1f69419868d?q=80&w=1470&auto=format&fit=crop')",
+                      backgroundImage: "url('/music_vid.png')",
                       transform: "translateZ(0)",
                     }}
                   ></div>
@@ -722,8 +751,7 @@ export default function Home() {
                   <div
                     className="absolute inset-0 scale-110 bg-cover bg-center transition-transform duration-1000 ease-out group-hover:scale-100"
                     style={{
-                      backgroundImage:
-                        "url('https://images.unsplash.com/photo-1540655037529-dec987208707?q=80&w=1470&auto=format&fit=crop')",
+                      backgroundImage: "url('/prod_house.png')",
                       transform: "translateZ(0)",
                     }}
                   ></div>
@@ -744,7 +772,7 @@ export default function Home() {
                         <path
                           strokeLinecap="round"
                           strokeLinejoin="round"
-                          strokeWidth={1.5}
+                          strokeWidth={2}
                           d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"
                         />
                       </svg>
@@ -794,8 +822,7 @@ export default function Home() {
                   <div
                     className="absolute inset-0 scale-110 bg-cover bg-center transition-transform duration-1000 ease-out group-hover:scale-100"
                     style={{
-                      backgroundImage:
-                        "url('https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?q=80&w=1470&auto=format&fit=crop')",
+                      backgroundImage: "url('/add_photo.png')",
                       transform: "translateZ(0)",
                     }}
                   ></div>
@@ -999,9 +1026,9 @@ export default function Home() {
                     </svg>
                     <span>Go to Application Form</span>
                   </a>
-                  <p className="text-gray-400">
+                  {/* <p className="text-gray-400">
                     Application deadline: December 15, 2023
-                  </p>
+                  </p> */}
                 </div>
               </div>
             </div>
@@ -1111,16 +1138,16 @@ export default function Home() {
                           </div>
 
                           <div className="flex items-center">
-                            <div className="h-12 w-12 rounded-full bg-gradient-to-br from-orange-500 to-orange-600 flex items-center justify-center text-white font-bold text-lg">
+                            {/* <div className="h-12 w-12 rounded-full bg-gradient-to-br from-orange-500 to-orange-600 flex items-center justify-center text-white font-bold text-lg">
                               M
-                            </div>
+                            </div> */}
                             <div className="ml-4">
-                              <h4 className="text-white font-medium">
+                              {/* <h4 className="text-white font-medium">
                                 Michael T.
-                              </h4>
-                              <p className="text-gray-400 text-sm">
+                              </h4> */}
+                              {/* <p className="text-gray-400 text-sm">
                                 Product Manager
-                              </p>
+                              </p> */}
                             </div>
                           </div>
                         </div>
@@ -1137,7 +1164,7 @@ export default function Home() {
                 </div>
 
                 {/* Stats cards */}
-                <div className="grid grid-cols-2 gap-4 mt-4">
+                {/* <div className="grid grid-cols-2 gap-4 mt-4">
                   <div className="bg-gradient-to-br from-black/60 to-black/30 backdrop-blur-md border border-white/5 rounded-xl p-4 transform transition-all duration-500 hover:border-orange-500/20 hover:shadow-lg hover:shadow-orange-500/10">
                     <div className="text-3xl font-bold text-orange-500">
                       500K+
@@ -1150,7 +1177,7 @@ export default function Home() {
                     </div>
                     <div className="text-gray-400">Customer Satisfaction</div>
                   </div>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>
@@ -1194,9 +1221,11 @@ export default function Home() {
                   Get started today and experience the power of AI-driven video
                   creation
                 </p>
-                <button className="btn-premium text-lg px-8 py-4 rounded-full font-medium text-white shadow-glow-orange">
-                  Start Creating Now
-                </button>
+                <Link href="/contact">
+                  <button className="btn-premium text-lg px-8 py-4 rounded-full font-medium text-white shadow-glow-orange">
+                    Contact Us
+                  </button>
+                </Link>
               </div>
             </div>
           </div>
@@ -1206,7 +1235,7 @@ export default function Home() {
       {/* Footer */}
       <footer className="w-full py-8 border-t border-white/10 bg-gradient-to-t from-black/40 to-transparent">
         <div className="container mx-auto text-center text-sm text-gray-400">
-          <p>© 2023 Stelllar Frame. All rights reserved.</p>
+          <p>© 2025 Stelllar Frame. All rights reserved.</p>
         </div>
       </footer>
     </div>
